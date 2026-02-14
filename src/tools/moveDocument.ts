@@ -34,8 +34,7 @@ toolRegistry.register('move_document', {
 
       const client = getOutlineClient();
       const response = await client.post('/documents.move', payload);
-      const { text, ...rest } = response.data.data;
-      return { content: [{ type: 'text', text: JSON.stringify(rest) }] };
+      return { content: [{ type: 'text', text: JSON.stringify(response.data.data) }] };
     } catch (error: any) {
       console.error('Error moving document:', error.message);
       throw new McpError(ErrorCode.InvalidRequest, error.message);

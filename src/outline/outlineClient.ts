@@ -25,6 +25,7 @@ export function createOutlineClient(apiKey?: string): AxiosInstance {
       Authorization: `Bearer ${key}`,
       'Content-Type': 'application/json',
       Accept: 'application/json',
+      'x-api-version': '3',
     },
   });
 }
